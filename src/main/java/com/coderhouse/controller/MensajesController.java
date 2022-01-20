@@ -1,7 +1,6 @@
 package com.coderhouse.controller;
 
 import com.coderhouse.model.Message;
-import com.coderhouse.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MensajesController {
 
-    private final UserService service;
-
     @GetMapping("/mensajes")
-    public List<Message> login() {
+    public List<Message> todosLosMensajes() {
         return dataMensajes();
     }
 

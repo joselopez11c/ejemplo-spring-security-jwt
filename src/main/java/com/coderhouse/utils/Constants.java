@@ -2,7 +2,6 @@ package com.coderhouse.utils;
 
 public class Constants {
 
-
     //Security
     public static final String ROLE = "ROLE_USER";
     public static final String AUTHORITIES = "authorities";

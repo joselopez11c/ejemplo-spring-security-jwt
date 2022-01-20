@@ -56,8 +56,10 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     }
 
     private Claims validateToken(HttpServletRequest request) {
-        var jwtToken = request.getHeader(Constants.HEADER_TOKEN).replace(Constants.PREFIX_TOKEN, "");
-        return Jwts.parser().setSigningKey(properties.getJwtSecret().getBytes()).parseClaimsJws(jwtToken).getBody();
+        var jwtToken = request.getHeader(Constants.HEADER_TOKEN)
+                .replace(Constants.PREFIX_TOKEN, "");
+        return Jwts.parser().setSigningKey(properties.getJwtSecret().getBytes())
+                .parseClaimsJws(jwtToken).getBody();
     }
 
     private boolean existsJwtToken(HttpServletRequest request, HttpServletResponse response) {
